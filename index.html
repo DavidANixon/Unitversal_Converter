@@ -2,7 +2,9 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
-        <script type='text/javascript' src='scripts.js'></script>
+          <script src = "/socket.io/socket.io.js"> </script>
+
+
             <title>
                 Unitversal Conversion
             </title>
@@ -41,7 +43,7 @@
                 </select></center>
             </td>
             <td>
-                <button id ='Convert'> Convert </button>
+                <button onclick="convert()" id ='convert'> Convert </button>
             </td>
             <td>
                 <center><select>
@@ -55,4 +57,5 @@
     </table>
 <br>
 </center>
+  <script type='text/javascript' src='scripts.js'> </script>
 </body>

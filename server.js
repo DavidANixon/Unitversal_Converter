@@ -1,10 +1,11 @@
 //made a comment
-
-var http = require('http');
 var express = require('express');
-//var pg = require('pg');
 var app = express();
-var port = process.env.PORT || 6969;
+var http = require('http').createServer(app);
+//var pg = require('pg');
+var sio = require('socket.io');
+var io = sio(http);
+var port = 6969;
 
 //const client = new pg.Client(connectionString);
 //client.connect();
@@ -15,9 +16,7 @@ var port = process.env.PORT || 6969;
   //});
 //});
 
-http.createServer(app).listen(port, function () {
-  console.log("Express server listening on port "+port);
-});
+http.listen(port);
 
 app.get("/", function(req, res){
   res.sendFile(__dirname + "/index.html");
@@ -29,4 +28,12 @@ app.get("/scripts.js", function(req, res){
 
 app.get("/stylesheet.css", function(req, res){
   res.sendFile(__dirname + "/stylesheet.css");
+});
+
+io.on('connection', function(socket){
+  socket.on('message', function(msg){
+    console.log('message: ' + msg);
+  });
+  socket.on("data", function(data) {
+});
 });

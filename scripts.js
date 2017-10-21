@@ -1,7 +1,7 @@
 var unitsSelected;
 var firstThingToBeConverted;
 var secondThingToBeConverted;
-
+var socket = io();
 
 function dropdownMenu() {
     document.getElementById("myDropdown").classList.toggle("show");
@@ -23,7 +23,9 @@ window.onclick = function(event) {
 }
 
 // When the user clicks the submit button
-document.getElementById('Convert').onclick = function(event) {
-  //socket.emit();
-  console.log("you did it");
-});
+
+function convert() {
+  socket.emit('message', 5);
+  console.log("yo");
+}
+console.log(4);
