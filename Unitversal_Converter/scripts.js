@@ -1,3 +1,8 @@
+var unitsSelected;
+var firstThingToBeConverted;
+var secondThingToBeConverted;
+
+
 function dropdownMenu() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
@@ -16,3 +21,9 @@ window.onclick = function(event) {
     }
   }
 }
+
+// When the user clicks the submit button
+document.getElementById('Convert').onclick = function(event) {
+  //socket.emit();
+  console.log("you did it");
+});
