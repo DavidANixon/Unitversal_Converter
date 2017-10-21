@@ -1,0 +1,21 @@
+{
+  "name": "Unitversal_Converter",
+  "version": "1.0.0",
+  "description": "Converts ridiculous units",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "units",
+    "converts",
+    "hackOhio"
+  ],
+  "author": "Vincent Portelli, Anna Sedlackova, Michael Smith, David Nixon, Jarred Entwistle",
+  "license": "MIT",
+  "dependencies": {
+    "express": "latest",
+    "express-session": "latest",
+    "http": "latest"
+  }
+}
