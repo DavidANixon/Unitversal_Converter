@@ -22,3 +22,11 @@ http.createServer(app).listen(port, function () {
 app.get("/", function(req, res){
   res.sendFile(__dirname + "/index.html");
 });
+
+app.get("/script.js", function(req, res){
+  res.sendFile(__dirname + "/script.js");
+});
+
+app.get("/stylesheet.css", function(req, res){
+  res.sendFile(__dirname + "/stylesheet.css");
+});
