@@ -16,6 +16,7 @@
   "dependencies": {
     "express": "latest",
     "express-session": "latest",
-    "http": "latest"
+    "http": "latest",
+    "pg": "latest"
   }
 }
