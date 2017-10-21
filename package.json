@@ -14,8 +14,9 @@
   "author": "Vincent Portelli, Anna Sedlackova, Michael Smith, David Nixon, Jarred Entwistle",
   "license": "MIT",
   "dependencies": {
-    "express": "latest",
-    "express-session": "latest",
-    "http": "latest"
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "http": "0.0.0",
+    "pg": "latest"
   }
 }
