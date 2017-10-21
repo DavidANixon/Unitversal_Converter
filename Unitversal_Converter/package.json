@@ -1,5 +1,5 @@
 {
-  "name": "Unitversal Converter",
+  "name": "Unitversal_Converter",
   "version": "1.0.0",
   "description": "Converts ridiculous units",
   "main": "server.js",
@@ -16,6 +16,6 @@
   "dependencies": {
     "express": "latest",
     "express-session": "latest",
-    "http": "latest",
+    "http": "latest"
   }
 }
