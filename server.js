@@ -10,7 +10,7 @@ var port = process.env.PORT || 6969;
 
 
 
-sendData = function(){
+sendData = function(socket){
   var dat = {};
   console.log("indata");
 
@@ -24,9 +24,7 @@ sendData = function(){
 
   pool.query('SELECT * FROM conversion;', (err, res) => {
     console.log(err);
-    console.log(res.rows);
     res = res.rows;
-    console.log("##########");
     for(var i = 0; i < res.length; i++){
       dat[res[i]["unit"]] = {};
       for(var key in res[i]){
@@ -36,6 +34,7 @@ sendData = function(){
       }
     }
     console.log(dat);
+    socket.emit("data", dat);
     pool.end()
   })
 }
@@ -45,7 +44,6 @@ http.listen(port);
 app.get("/", function(req, res){
   console.log("yuh");
   res.sendFile(__dirname + "/index.html");
-  sendData();
 });
 
 app.get("/scripts.js", function(req, res){
@@ -61,5 +59,6 @@ io.on('connection', function(socket){
     console.log('message: ' + msg);
   });
   socket.on("data", function(data) {
-});
+    sendData();
+  });
 });

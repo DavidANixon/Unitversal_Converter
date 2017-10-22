@@ -69,3 +69,11 @@ function setSecondThing(value){
   secondThingToBeConverted = document.getElementById("secondThing").value;
   console.log(firstThingToBeConverted);
 }
+
+
+socket.emit("data");
+socket.on("data", function(data){
+  dat = data;
+  console.log(dat);
+  //update first drop-down
+});
