@@ -54,6 +54,10 @@ app.get("/scripts.js", function(req, res){
   res.sendFile(__dirname + "/scripts.js");
 });
 
+app.get("/add_script.js", function(req, res){
+  res.sendFile(__dirname + "/add_script.js");
+});
+
 app.get("/stylesheet.css", function(req, res){
   res.sendFile(__dirname + "/stylesheet.css");
 });
