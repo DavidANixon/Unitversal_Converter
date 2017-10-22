@@ -25,9 +25,9 @@ getData = function(){
   pool.query('SELECT * FROM conversion;', (err, res) => {
     console.log(err);
     dat = res;
+    console.log(dat.rows);
     pool.end()
   })
-  console.log(dat.rows);
 }
 
 http.listen(port);
