@@ -47,7 +47,7 @@ app.get("/", function(req, res){
 });
 
 app.get("/add", function(req, res){
-  res.sendFile(__dirname + "add.html");
+  res.sendFile(__dirname + "/add.html");
 });
 
 app.get("/scripts.js", function(req, res){
