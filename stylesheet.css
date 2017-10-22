@@ -1,10 +1,92 @@
 .body{
-    background-color: #bb0000;
-    font-family: Optima, sans-serif;
+    background-color: #white;
+    font-family: 'Libre Franklin', sans-serif;
 }
-#title{
-    color: white;
-}
-.Convert{
 
+#header {
+  height:100px;
+  background:#c9d8c5;
+  width:100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  margin:0px auto;
+ }
+
+#title1{
+  padding-top: 15px;
+  color: white;
+}
+
+#title2{
+  padding-top: 150px;
+  color: black;
+}
+
+#box{
+  padding-top:40px;
+  color: black;
+}
+
+#leftTextBox{
+  width: 100%;
+  padding: 6px 10px;
+  margin: 4px 0;
+  box-sizing: border-box;
+  border: 1.5px solid #a8b6bf;
+  border-radius: 4px;
+}
+
+#rightTextBox{
+  width: 100%;
+  padding: 6px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1.5px solid #a8b6bf;
+  border-radius: 4px;
+}
+
+#units{
+  padding: 6px 10px;
+  border: none;
+  margin-left: 15px;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+#firstThing{
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+#secondThing{
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+#footer{
+  height:50px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  background:#a8b6bf;
+  width:100%;
+  margin:0px auto;
+  color:white;
+}
+
+#convert{
+  background-color: #c9d8c5;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  margin: 4px 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Libre Franklin', sans-serif;
+  text-align: center;
 }
