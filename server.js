@@ -60,6 +60,6 @@ io.on('connection', function(socket){
   });
   socket.on("data", function() {
     console.log("sending data");
-    sendData();
+    sendData(socket);
   });
 });
