@@ -8,23 +8,26 @@ var sio = require('socket.io');
 var io = sio(http);
 var port = process.env.PORT || 6969;
 
-const pool = new Pool({
-  user: 'pyaeemldfcrphx',
-  host: 'ec2-54-235-80-137.compute-1.amazonaws.com',
-  database: 'dds25ml3gtkcif',
-  password: 'b5687a6f2398c72fc6dd4e0bd48a411befd302f027e7dae5ac60d98e18bfd913',
-  port: 5432,
-})
+
 
 getData = function(){
   var dat;
   console.log("indata");
+
+  const pool = new Pool({
+    user: 'pyaeemldfcrphx',
+    host: 'ec2-54-235-80-137.compute-1.amazonaws.com',
+    database: 'dds25ml3gtkcif',
+    password: 'b5687a6f2398c72fc6dd4e0bd48a411befd302f027e7dae5ac60d98e18bfd913',
+    port: 5432,
+  });
+
   pool.query('SELECT * FROM conversion;', (err, res) => {
-    console.log(err, res)
+    console.log(err);
     dat = res;
     pool.end()
   })
-  console.log(dat);
+  console.log(dat.rows);
 }
 
 http.listen(port);
