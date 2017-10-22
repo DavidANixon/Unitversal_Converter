@@ -48,7 +48,7 @@ function convert() {
     var result;
     console.log(firstThingToBeConverted);
     console.log(unitsSelected);
-    if(document.getElementById("leftTextBox")===""){
+    if(document.getElementById("leftTextBox").value===""){
         result = (dat[secondThingToBeConverted][unitsSelected]* parseFloat(document.getElementById("rightTextBox").value)) /(dat[firstThingToBeConverted][unitsSelected]);
         document.getElementById("leftTextBox").value = result;
     }else {
