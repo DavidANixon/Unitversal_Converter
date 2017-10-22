@@ -12,6 +12,7 @@ submit = function(){
   document.getElementById('submit').disabled = true;
   alert("Unit added");
   socket.emit("add", out);
+  window.location.replace('https://unitversal-converter.herokuapp.com/');
 }
 
 socket.on("data", function(data){
