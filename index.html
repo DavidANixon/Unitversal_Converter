@@ -3,8 +3,6 @@
     <head>
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
           <script src = "/socket.io/socket.io.js"> </script>
-
-
             <title>
                 Unitversal Conversion
             </title>
@@ -14,28 +12,28 @@
     <h1 id="title">Unitversal Conversion</h1>
     <h3 id="title"> Lets convert some spooky units! </h3>
     <div style="color: white;">Convert:
-    <select>
-        <option value="volume">Volume</option>
+    <select id = "units" onchange="setUnitsSelected()">
+        <option value="length">Length</option>
         <option value="mass">Mass</option>
-        <option value="temp">Temperature</option>
+        <option value="energy">Energy</option>
     </select>
     </div>
 <br>
     <table>
         <tr>
             <td>
-                <input type="text" name="firstvalue" value="">
+                <input type="text" name="firstvalue" value="" id = "leftTextBox">
             </td>
             <td>
                 <center><h4 style="color: white">=</h4></center>
             </td>
             <td>
-                <input type="text" name="firstvalue" value="">
+                <input type="text" name="firstvalue" value="" id = "rightTextBox">
             </td>
         </tr>
         <tr>
             <td>
-                <center><select>
+                <center ><select onchange="setFirstThing()" id = "firstThing">
                     <option> </option>
                     <option value="bus">Buses</option>
                     <option value="hotdog">Hotdogs</option>
@@ -46,7 +44,7 @@
                 <button onclick="convert()" id ='convert'> Convert </button>
             </td>
             <td>
-                <center><select>
+                <center><select  onchange="setSecondThing()" id = "secondThing">
                     <option> </option>
                     <option value="bus">Buses</option>
                     <option value="hotdog">Hotdogs</option>

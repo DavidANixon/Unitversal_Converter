@@ -7,6 +7,23 @@ function dropdownMenu() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
+dat = {};
+
+ele = {};
+ele["length"] = 6;
+ele["mass"] = 5000;
+ele["energy"] = 10000;
+
+dat["elephant"] = ele;
+
+car = {};
+car["length"] = 7;
+car["mass"] = 4000;
+car["energy"] = 7000;
+
+dat["car"] = car;
+
+
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
@@ -23,9 +40,32 @@ window.onclick = function(event) {
 }
 
 // When the user clicks the submit button
-
 function convert() {
-  socket.emit('message', 5);
-  console.log("yo");
+
 }
-console.log(4);
+
+function setUnitsSelected() {
+  unitsSelected = document.getElementById("units").value;
+  console.log(unitsSelected);
+  var str;
+  for (var key in dat) {
+    if (dat.hasOwnProperty(key)) {
+      if (dat[key][unitsSelected]) {
+        str+= "<option value=\""+key+"\">"+key+"</option>";
+      }
+    }
+
+}
+  document.getElementById("firstThing").innerHTML=str;
+  document.getElementById("secondThing").innerHTML=str;
+}
+
+function setFirstThing() {
+  firstThingToBeConverted = document.getElementById("firstThing").value;
+  console.log(firstThingToBeConverted);
+}
+
+function setSecondThing(value){
+  secondThingToBeConverted = document.getElementById("secondThing").value;
+  console.log(firstThingToBeConverted);
+}
