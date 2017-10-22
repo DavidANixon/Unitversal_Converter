@@ -46,6 +46,10 @@ app.get("/", function(req, res){
   res.sendFile(__dirname + "/index.html");
 });
 
+app.get("/add", function(req, res){
+  res.sendFile(__dirname + "add.html");
+});
+
 app.get("/scripts.js", function(req, res){
   res.sendFile(__dirname + "/scripts.js");
 });
