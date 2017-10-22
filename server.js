@@ -28,8 +28,8 @@ sendData = function(){
     res = res.rows;
     console.log("##########");
     for(var i = 0; i < res.length; i++){
+      dat[res[i]["unit"]] = {};
       for(var key in res[i]){
-        dat[res[i]["unit"]] = {};
         if(res[i].hasOwnProperty(key) && key != "id" && key != "unit" && key != "length" && res[i][key] != null){
           dat[res[i]["unit"]][key] = res[i][key];
         }
