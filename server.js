@@ -7,7 +7,7 @@ var sio = require('socket.io');
 var io = sio(http);
 var port = process.env.PORT || 6969;
 
-const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432';
+const connectionString = "postgres://pyaeemldfcrphx:b5687a6f2398c72fc6dd4e0bd48a411befd302f027e7dae5ac60d98e18bfd913@ec2-54-235-80-137.compute-1.amazonaws.com:5432/dds25ml3gtkcif";
 const client = new pg.Client(connectionString);
 client.connect();
 
