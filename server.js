@@ -11,15 +11,16 @@ const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432'
 const client = new pg.Client(connectionString);
 client.connect();
 
+var pool = new pg.Pool()
 
 getData = function(){
   var dat;
   console.log("indata");
-  pg.connect(connectionString, function(err, client, done) {
+  pool.connect(connectionString, function(err, client, done) {
     console.log("inconnect");
     client.query('SELECT * FROM conversion;', function(err, result) {
       dat = result;
-      done();
+      pool.end();
     });
   });
   console.log(dat);
