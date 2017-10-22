@@ -25,12 +25,11 @@ getData = function(){
   pool.query('SELECT * FROM conversion;', (err, res) => {
     console.log(err);
     console.log(res.rows);
+    res = res.rows;
     console.log("##########");
     for(var i = 0; i < res.length; i++){
-      console.log(i);
       for(var key in res[i]){
         if(res[i].hasOwnProperty(key) && key != "id" && key != "unit" && res[i][key] != null){
-          console.log("!! -> "+key);
           dat[res[i][unit]][key] = res[i][key];
         }
       }
