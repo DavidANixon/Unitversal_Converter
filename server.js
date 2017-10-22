@@ -50,6 +50,24 @@ app.get("/add", function(req, res){
   res.sendFile(__dirname + "/add.html");
 });
 
+app.get("/add_this", function(req, res){
+  str = "insert into conversion(unit";
+  data = req.body;
+  for (var key in data) {
+    if (data.hasOwnProperty(var) && var != 'unit') {
+      str+=", "+var;
+    }
+  }
+  str += ") values ("+data["unit"];
+  for (var key in data) {
+    if (data.hasOwnProperty(var) && var != 'unit') {
+      str+=", "+data[var];
+    }
+  }
+  str+=");";
+  console.log(str);
+});
+
 app.get("/scripts.js", function(req, res){
   res.sendFile(__dirname + "/scripts.js");
 });
