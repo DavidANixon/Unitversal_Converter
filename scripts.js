@@ -80,7 +80,7 @@ socket.on("data", function(data){
     if (dat.hasOwnProperty(key)) {
       for (var lol in dat[key]) {
         if (dat[key].hasOwnProperty(lol)) {
-          if(!units.contains(lol)){
+          if(units.indexOf(lol) == -1){
             units.push(lol);
           }
         }
