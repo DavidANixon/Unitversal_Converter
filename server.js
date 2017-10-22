@@ -12,9 +12,11 @@ const client = new pg.Client(connectionString);
 client.connect();
 
 
-function getData(){
+getData = function(){
   var dat;
+  console.log("indata");
   pg.connect(connectionString, function(err, client, done) {
+    console.log("inconnect");
     client.query('SELECT * FROM conversion;', function(err, result) {
       dat = result;
       done();
@@ -26,6 +28,7 @@ function getData(){
 http.listen(port);
 
 app.get("/", function(req, res){
+  console.log("yuh");
   res.sendFile(__dirname + "/index.html");
   getData();
 });
