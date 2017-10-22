@@ -10,7 +10,7 @@ var port = process.env.PORT || 6969;
 
 
 
-getData = function(){
+sendData = function(){
   var dat = {};
   console.log("indata");
 
