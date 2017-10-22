@@ -50,25 +50,6 @@ app.get("/add", function(req, res){
   res.sendFile(__dirname + "/add.html");
 });
 
-app.get("/add_this", function(req, res){
-  console.log(req);
-  str = "insert into conversion(unit";
-  data = req.body;
-  for (var key in data) {
-    if (data.hasOwnProperty(key) && key != 'unit') {
-      str+=", "+key;
-    }
-  }
-  str += ") values ("+data["unit"];
-  for (var key in data) {
-    if (data.hasOwnProperty(key) && key != 'unit') {
-      str+=", "+data[key];
-    }
-  }
-  str+=");";
-  console.log(str);
-});
-
 app.get("/scripts.js", function(req, res){
   res.sendFile(__dirname + "/scripts.js");
 });
@@ -88,5 +69,22 @@ io.on('connection', function(socket){
   socket.on("data", function() {
     console.log("sending data");
     sendData(socket);
+  });
+
+  socket.on("add", function(data){
+    str = "insert into conversion(unit";
+    for (var key in data) {
+      if (data.hasOwnProperty(key) && key != 'unit') {
+        str+=", "+key;
+      }
+    }
+    str += ") values ("+data["unit"];
+    for (var key in data) {
+      if (data.hasOwnProperty(key) && key != 'unit') {
+        str+=", "+data[key];
+      }
+    }
+    str+=");";
+    console.log(str);
   });
 });

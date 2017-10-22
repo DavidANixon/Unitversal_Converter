@@ -4,6 +4,15 @@ socket.emit("data",0);
 
 var dat;
 
+function submit(){
+  out = {unit: document.getElementById("unit").value};
+  for (var i = 0; i < units.length; i++) {
+    out[units[i]] = document.getElementById(units[i]).value;
+  }
+
+  socket.emit("add", out);
+}
+
 socket.on("data", function(data){
   dat = data;
   console.log(dat);
