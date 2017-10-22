@@ -21,8 +21,9 @@ sendData = function(socket){
     password: 'b5687a6f2398c72fc6dd4e0bd48a411befd302f027e7dae5ac60d98e18bfd913',
     port: 5432,
   });
-
-  pool.query('SELECT * FROM conversion;', (err, res, socket) => {
+  
+  var socket = socket;
+  pool.query('SELECT * FROM conversion;', function(err, res, socket){
     console.log(err);
     res = res.rows;
     for(var i = 0; i < res.length; i++){
