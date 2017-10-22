@@ -2,7 +2,7 @@
 var express = require('express');
 var app = express();
 var http = require('http').createServer(app);
-//var pg = require('pg');
+var pg = require('pg');
 var sio = require('socket.io');
 var io = sio(http);
 var port = process.env.PORT || 6969;
