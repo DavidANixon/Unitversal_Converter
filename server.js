@@ -72,13 +72,13 @@ io.on('connection', function(socket){
   socket.on("add", function(data){
     str = "insert into conversion(unit";
     for (var key in data) {
-      if (data.hasOwnProperty(key) && key != 'unit' && data[key] != null) {
+      if (data.hasOwnProperty(key) && key != 'unit' && data[key]) {
         str+=", "+key;
       }
     }
     str += ") values ("+data["unit"];
     for (var key in data) {
-      if (data.hasOwnProperty(key) && key != 'unit' && data[key] != null) {
+      if (data.hasOwnProperty(key) && key != 'unit' && data[key]) {
         str+=", "+data[key];
       }
     }
