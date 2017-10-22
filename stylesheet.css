@@ -49,6 +49,7 @@
 #units{
   padding: 6px 10px;
   border: none;
+  margin-left: 15px;
   border-radius: 4px;
   background-color: #f1f1f1;
 }
@@ -78,6 +79,14 @@
   color:white;
 }
 
-.Convert{
+#convert{
+  background-color: #c9d8c5;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  margin: 4px 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Libre Franklin', sans-serif;
   text-align: center;
 }
