@@ -5,21 +5,29 @@ var http = require('http').createServer(app);
 //var pg = require('pg');
 var sio = require('socket.io');
 var io = sio(http);
-var port = 6969;
+var port = process.env.PORT || 6969;
 
-//const client = new pg.Client(connectionString);
-//client.connect();
+const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432';
+const client = new pg.Client(connectionString);
+client.connect();
 
-//pg.connect(connectionString, function(err, client, done) {
-  //client.query('CREATE TABLE IF NOT EXISTS conversion(id PRIMARY KEY, date VARCHAR(60) not null, box0 INT, box1 INT, box2 INT, box3 INT, box4 INT, box5 INT, box6 INT, box7 INT, box8 INT, total INT, color VARCHAR(10), initials VARCHAR(3) )', function(err, result) {
-    //done();
-  //});
-//});
+
+function getData(){
+  var dat;
+  pg.connect(connectionString, function(err, client, done) {
+    client.query('SELECT * FROM conversion;', function(err, result) {
+      dat = result;
+      done();
+    });
+  });
+  console.log(dat);
+}
 
 http.listen(port);
 
 app.get("/", function(req, res){
   res.sendFile(__dirname + "/index.html");
+  getData();
 });
 
 app.get("/scripts.js", function(req, res){
