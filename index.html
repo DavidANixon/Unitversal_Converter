@@ -2,16 +2,17 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet">
           <script src = "/socket.io/socket.io.js"> </script>
             <title>
-                UNITVERSAL CONVERSION
+                Unitversal Converter
             </title>
         </head>
 <body class="body">
 <center>
-    <h1 id="title">UNITVERSAL CONVERSION</h1>
-    <h3 id="title"> Lets convert some spooky units! </h3>
-    <div style="color: white;">Convert:
+    <div id = "header"><h1 id="title1">UNITVERSAL CONVERTER</h1></div>
+    <h3 id="title2"> Lets convert some spooky units! </h3>
+    <div style="color: black;">Convert:
     <select id = "units" onchange="setUnitsSelected()">
         <option value="length">Length</option>
         <option value="mass">Mass</option>
@@ -54,6 +55,7 @@
         </tr>
     </table>
 <br>
+<div id="footer"></div>
 </center>
   <script type='text/javascript' src='scripts.js'> </script>
 </body>
