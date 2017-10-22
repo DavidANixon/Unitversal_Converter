@@ -19,13 +19,11 @@ const pool = new Pool({
 getData = function(){
   var dat;
   console.log("indata");
-  pool.connect(function(err, client, done) {
-    console.log("inconnect");
-    client.query('SELECT * FROM conversion;', function(err, result) {
-      dat = result;
-      pool.end();
-    });
-  });
+  pool.query('SELECT * FROM conversion;', (err, res) => {
+    console.log(err, res)
+    dat = res;
+    pool.end()
+  })
   console.log(dat);
 }
 
