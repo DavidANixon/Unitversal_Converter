@@ -30,7 +30,7 @@ getData = function(){
     for(var i = 0; i < res.length; i++){
       for(var key in res[i]){
         if(res[i].hasOwnProperty(key) && key != "id" && key != "unit" && res[i][key] != null){
-          dat[res[i][unit]][key] = res[i][key];
+          dat[res[i]["unit"]][key] = res[i][key];
         }
       }
     }
