@@ -27,10 +27,10 @@ getData = function(){
     console.log(res.rows);
     console.log("##########");
     for(var i = 0; i < res.length; i++){
+      console.log(i);
       for(var key in res[i]){
-        console.log(i);
-        if(res[i].hasOwnProperty(key) && key != "id" && key != "unit"){
-          console.log("!! -> "+i);
+        if(res[i].hasOwnProperty(key) && key != "id" && key != "unit" && res[i][key] != null){
+          console.log("!! -> "+key);
           dat[res[i][unit]][key] = res[i][key];
         }
       }
