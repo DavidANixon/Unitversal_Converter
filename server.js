@@ -58,7 +58,8 @@ io.on('connection', function(socket){
   socket.on('message', function(msg){
     console.log('message: ' + msg);
   });
-  socket.on("data", function(data) {
+  socket.on("data", function() {
+    console.log("sending data");
     sendData();
   });
 });
