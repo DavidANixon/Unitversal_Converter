@@ -1,10 +1,27 @@
 .body{
-    background-color: #bb0000;
-    font-family: Optima, sans-serif;
+    background-color: #white;
+    font-family: 'Libre Franklin', sans-serif;
 }
-#title{
-    color: white;
-}
-.Convert{
 
+#header {
+  height:100px;
+  background:#c9d8c5;
+  width:100%;
+  margin:0px auto;
+ }
+#title1{
+  padding-top: 50px;
+  color: white;
+}
+
+#title2{
+  color: black;
+}
+
+#footer{
+
+}
+
+.Convert{
+  text-align: center;
 }
