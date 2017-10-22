@@ -2,16 +2,19 @@
 var express = require('express');
 var app = express();
 var http = require('http').createServer(app);
-var pg = require('pg');
+//var pg = require('pg');
+const { Pool, Client } = require('pg');
 var sio = require('socket.io');
 var io = sio(http);
 var port = process.env.PORT || 6969;
 
-const connectionString = "postgres://pyaeemldfcrphx:b5687a6f2398c72fc6dd4e0bd48a411befd302f027e7dae5ac60d98e18bfd913@ec2-54-235-80-137.compute-1.amazonaws.com:5432/dds25ml3gtkcif";
-const client = new pg.Client(connectionString);
-client.connect();
-
-var pool = new pg.Pool()
+const pool = new Pool({
+  user: 'pyaeemldfcrphx',
+  host: 'ec2-54-235-80-137.compute-1.amazonaws.com',
+  database: 'dds25ml3gtkcif',
+  password: 'b5687a6f2398c72fc6dd4e0bd48a411befd302f027e7dae5ac60d98e18bfd913',
+  port: 5432,
+})
 
 getData = function(){
   var dat;
