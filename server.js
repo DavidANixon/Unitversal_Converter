@@ -21,9 +21,7 @@ sendData = function(socket){
     port: 5432,
   });
 
-  console.log(socket);
   pool.query('SELECT * FROM conversion;', function(err, res){
-    console.log("2: --> "+socket);
     console.log(err);
     res = res.rows;
     for(var i = 0; i < res.length; i++){
@@ -86,5 +84,19 @@ io.on('connection', function(socket){
     }
     str+=");";
     console.log(str);
+
+    const pool = new Pool({
+      user: 'pyaeemldfcrphx',
+      host: 'ec2-54-235-80-137.compute-1.amazonaws.com',
+      database: 'dds25ml3gtkcif',
+      password: 'b5687a6f2398c72fc6dd4e0bd48a411befd302f027e7dae5ac60d98e18bfd913',
+      port: 5432,
+    });
+
+    pool.query(str, function(err, res){
+      console.log(err);
+      pool.end()
+    });
+
   });
 });
