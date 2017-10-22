@@ -60,7 +60,7 @@ app.get("/add_this", function(req, res){
   }
   str += ") values ("+data["unit"];
   for (var key in data) {
-    if (data.hasOwnProperty(var) && key != 'unit') {
+    if (data.hasOwnProperty(key) && key != 'unit') {
       str+=", "+data[key];
     }
   }
