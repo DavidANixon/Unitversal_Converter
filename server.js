@@ -11,7 +11,7 @@ var port = process.env.PORT || 6969;
 
 
 getData = function(){
-  var dat;
+  var dat = {};
   console.log("indata");
 
   const pool = new Pool({
@@ -24,8 +24,16 @@ getData = function(){
 
   pool.query('SELECT * FROM conversion;', (err, res) => {
     console.log(err);
-    dat = res;
-    console.log(dat.rows);
+    console.log(res.rows);
+    console.log("##########");
+    for(var i = 0; i < res.length; i++){
+      for(var key in res[i]){
+        if(res[i].hasOwnProperty(key) && key != "id" && key != "unit"){
+          dat[res[i][unit]][key] = res[i][key];
+        }
+      }
+    }
+    return dat;
     pool.end()
   })
 }
@@ -35,7 +43,7 @@ http.listen(port);
 app.get("/", function(req, res){
   console.log("yuh");
   res.sendFile(__dirname + "/index.html");
-  getData();
+  console.log(getData());
 });
 
 app.get("/scripts.js", function(req, res){
