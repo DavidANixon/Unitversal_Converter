@@ -54,14 +54,14 @@ app.get("/add_this", function(req, res){
   str = "insert into conversion(unit";
   data = req.body;
   for (var key in data) {
-    if (data.hasOwnProperty(var) && var != 'unit') {
-      str+=", "+var;
+    if (data.hasOwnProperty(key) && var != 'unit') {
+      str+=", "+key;
     }
   }
   str += ") values ("+data["unit"];
   for (var key in data) {
-    if (data.hasOwnProperty(var) && var != 'unit') {
-      str+=", "+data[var];
+    if (data.hasOwnProperty(var) && key != 'unit') {
+      str+=", "+data[key];
     }
   }
   str+=");";
