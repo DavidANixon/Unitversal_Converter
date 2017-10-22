@@ -9,7 +9,8 @@ submit = function(){
   for (var i = 0; i < units.length; i++) {
     out[units[i]] = document.getElementById(units[i]).value;
   }
-
+  document.getElementById('submit').disabled = true;
+  alert("Unit added");
   socket.emit("add", out);
 }
 
