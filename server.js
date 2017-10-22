@@ -22,7 +22,7 @@ sendData = function(socket){
     port: 5432,
   });
 
-  pool.query('SELECT * FROM conversion;', (err, res) => {
+  pool.query('SELECT * FROM conversion;', (err, res, socket) => {
     console.log(err);
     res = res.rows;
     for(var i = 0; i < res.length; i++){
