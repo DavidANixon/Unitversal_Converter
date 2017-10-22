@@ -76,7 +76,7 @@ io.on('connection', function(socket){
         str+=", "+key;
       }
     }
-    str += ") values (''"+data["unit"]+"'";
+    str += ") values ('"+data["unit"]+"'";
     for (var key in data) {
       if (data.hasOwnProperty(key) && key != 'unit' && data[key]) {
         str+=", "+data[key];
