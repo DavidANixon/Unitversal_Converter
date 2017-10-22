@@ -28,7 +28,9 @@ getData = function(){
     console.log("##########");
     for(var i = 0; i < res.length; i++){
       for(var key in res[i]){
+        console.log(i);
         if(res[i].hasOwnProperty(key) && key != "id" && key != "unit"){
+          console.log("!! -> "+i);
           dat[res[i][unit]][key] = res[i][key];
         }
       }
