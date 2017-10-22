@@ -51,6 +51,7 @@ app.get("/add", function(req, res){
 });
 
 app.get("/add_this", function(req, res){
+  console.log(req);
   str = "insert into conversion(unit";
   data = req.body;
   for (var key in data) {
