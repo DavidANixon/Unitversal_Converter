@@ -4,7 +4,7 @@ socket.emit("data",0);
 
 var dat;
 
-function submit(){
+submit = function(){
   out = {unit: document.getElementById("unit").value};
   for (var i = 0; i < units.length; i++) {
     out[units[i]] = document.getElementById(units[i]).value;
