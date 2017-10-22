@@ -12,7 +12,6 @@ var port = process.env.PORT || 6969;
 
 sendData = function(socket){
   var dat = {};
-  console.log("indata");
 
   const pool = new Pool({
     user: 'pyaeemldfcrphx',
@@ -21,9 +20,10 @@ sendData = function(socket){
     password: 'b5687a6f2398c72fc6dd4e0bd48a411befd302f027e7dae5ac60d98e18bfd913',
     port: 5432,
   });
-  
-  var socket = socket;
-  pool.query('SELECT * FROM conversion;', function(err, res, socket){
+
+  console.log(socket);
+  pool.query('SELECT * FROM conversion;', function(err, res){
+    console.log("2: --> "+socket);
     console.log(err);
     res = res.rows;
     for(var i = 0; i < res.length; i++){
@@ -43,7 +43,6 @@ sendData = function(socket){
 http.listen(port);
 
 app.get("/", function(req, res){
-  console.log("yuh");
   res.sendFile(__dirname + "/index.html");
 });
 
