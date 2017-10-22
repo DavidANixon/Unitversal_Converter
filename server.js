@@ -16,7 +16,7 @@ var pool = new pg.Pool()
 getData = function(){
   var dat;
   console.log("indata");
-  pool.connect(connectionString, function(err, client, done) {
+  pool.connect(function(err, client, done) {
     console.log("inconnect");
     client.query('SELECT * FROM conversion;', function(err, result) {
       dat = result;
